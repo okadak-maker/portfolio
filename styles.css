@@ -17,7 +17,7 @@
 
   --text:         #D4D4DC;
   --text-strong:  #EDEDF2;
-  --text-muted:   #76768A;
+  --text-muted:   #A3A3B8; /* Improved contrast ratio for readability */
 
   --accent:       #13AE67;
   --accent-dim:   rgba(19, 174, 103, 0.12);
@@ -46,7 +46,7 @@
   --border-hover: rgba(0, 0, 0, 0.16);
   --text:       #3C3C43;
   --text-strong:#1A1A1E;
-  --text-muted: #8E8E9A;
+  --text-muted: #5C5C66; /* Improved contrast ratio (WCAG AA) */
   --accent-dim: rgba(19, 174, 103, 0.08);
   --accent-text:#0A8C4F;
 }
@@ -94,6 +94,11 @@ h3 { font-size: 17px; font-weight: 600; }
   max-width: 540px;
   margin-bottom: var(--sp-10);
   line-height: 1.7;
+}
+
+.ib {
+  display: inline-block;
+  text-decoration: inherit;
 }
 
 /* ===== LAYOUT ===== */
@@ -277,7 +282,7 @@ section { padding: var(--section-gap) 0; position: relative; }
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-8);
+  gap: var(--sp-10); /* Increased spacing for better visual rhythm */
 }
 .project {
   padding: var(--sp-8);
@@ -398,7 +403,7 @@ section { padding: var(--section-gap) 0; position: relative; }
 
 /* ===== FOOTER ===== */
 .footer {
-  padding: var(--sp-8) 0;
+  padding: var(--sp-12) 0; /* More breathing room at the bottom */
   border-top: 1px solid var(--border);
   font: 400 13px/1.6 var(--font-mono);
   color: var(--text-muted);
