@@ -5,7 +5,7 @@ ReSowホールディングス 業務推進DX担当のポートフォリオサイ
 
 ## 🔗 Live
 
-GitHub Pages: (デプロイ後にURLを追加)
+GitHub Pages: https://okadak-maker.github.io/portfolio/
 
 ## 🛠 Tech Stack
 
