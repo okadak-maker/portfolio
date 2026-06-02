@@ -54,12 +54,21 @@
     });
   }
 
-  // ===== NAV ACTIVE LINK =====
+  // ===== SCROLL PROGRESS + NAV ACTIVE =====
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
+  const progressBar = document.getElementById('scroll-progress');
 
   window.addEventListener('scroll', () => {
-    const y = window.scrollY + 100;
+    // Progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar && docHeight > 0) {
+      progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+    }
+
+    // Active nav link
+    const y = scrollTop + 100;
     sections.forEach(s => {
       const top = s.offsetTop;
       const id = s.getAttribute('id');
