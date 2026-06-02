@@ -351,6 +351,15 @@ section { padding: var(--section-gap) 0; position: relative; }
   margin-bottom: var(--sp-4);
   padding-bottom: var(--sp-3);
   border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skill-group h3 svg {
+  width: 18px; height: 18px;
+  color: var(--accent-text);
+  flex-shrink: 0;
+  opacity: 0.85;
 }
 .skill-tags {
   display: flex; flex-wrap: wrap; gap: 6px;
