@@ -85,7 +85,22 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 800; letter-spacing: -0.03em; }
-h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: var(--sp-6); }
+h2 {
+  font-size: clamp(22px, 3vw, 30px); font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: var(--sp-6);
+  display: inline-block;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 40px; height: 2px;
+  margin-top: 8px;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+section:hover h2::after,
+h2.active::after { width: 64px; }
 h3 { font-size: 17px; font-weight: 600; }
 
 .label-sm {
@@ -120,9 +135,15 @@ section { padding: var(--section-gap) 0; position: relative; }
   height: var(--nav-h);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 var(--sp-6);
-  background: var(--bg);
+  background: rgba(12, 12, 16, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
+  transition: background 0.3s;
+}
+[data-theme="light"] .nav {
+  background: rgba(250, 250, 252, 0.85);
 }
 .nav::after {
   content: '';
@@ -179,6 +200,16 @@ section { padding: var(--section-gap) 0; position: relative; }
   padding-top: var(--nav-h);
 }
 .hero-inner { padding-top: var(--sp-20); padding-bottom: var(--sp-20); }
+
+/* Hero entrance stagger */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero .hero-role    { animation: heroFadeUp 0.7s ease both; animation-delay: 0.1s; }
+.hero h1            { animation: heroFadeUp 0.7s ease both; animation-delay: 0.25s; }
+.hero .hero-intro   { animation: heroFadeUp 0.7s ease both; animation-delay: 0.45s; }
+.hero .hero-links   { animation: heroFadeUp 0.7s ease both; animation-delay: 0.6s; }
 
 .hero h1 { margin-bottom: var(--sp-3); }
 .hero h1 .name-en {
@@ -458,9 +489,60 @@ section { padding: var(--section-gap) 0; position: relative; }
 .contact-link:hover { border-color: var(--accent-text); color: var(--accent-text); }
 .contact-link svg { width: 16px; height: 16px; flex-shrink: 0; }
 
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  max-width: 480px;
+  margin-top: var(--sp-6);
+}
+.contact-form .full-width { grid-column: 1 / -1; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text);
+  font: 400 14px/1.5 var(--font-ja);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.contact-form button {
+  padding: 10px 24px;
+  background: #0b7f4a;
+  color: #fff;
+  border: none;
+  border-radius: var(--r-sm);
+  font: 500 14px/1 var(--font-ja);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form button:hover { background: var(--accent); }
+.form-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: var(--sp-2);
+}
+
 /* ===== FOOTER ===== */
 .footer {
-  padding: var(--sp-12) 0; /* More breathing room at the bottom */
+  padding: var(--sp-12) 0;
   border-top: 1px solid var(--border);
   font: 400 13px/1.6 var(--font-mono);
   color: var(--text-muted);
@@ -497,10 +579,16 @@ section { padding: var(--section-gap) 0; position: relative; }
   .hero-links a { text-align: center; }
 }
 
+@media (max-width: 768px) {
+  .contact-form { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+  .hero .hero-role, .hero h1,
+  .hero .hero-intro, .hero .hero-links { animation: none; opacity: 1; transform: none; }
 }
