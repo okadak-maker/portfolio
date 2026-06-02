@@ -224,8 +224,8 @@ section { padding: var(--section-gap) 0; position: relative; }
 }
 .hero-links a:hover { border-color: var(--accent-text); color: var(--accent-text); }
 .hero-links a.primary {
-  background: #0d8a50;
-  border-color: #0d8a50;
+  background: #0b7f4a;
+  border-color: #0b7f4a;
   color: #fff;
 }
 .hero-links a.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
