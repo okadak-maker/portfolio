@@ -10,383 +10,256 @@
   <meta property="og:description" content="就労継続支援B型事業所のDXを一人で推進しています。">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%2313AE67'/><text x='50' y='68' text-anchor='middle' font-size='50' font-family='Inter,sans-serif' font-weight='700' fill='white'>K</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="scroll-progress" id="scroll-progress"></div>
+  <!-- Header -->
+  <header class="header">
+    <span class="header-logo">kenki.okada</span>
+    <button class="theme-toggle" id="theme-toggle" aria-label="テーマ切替">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+  </header>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="#" class="nav-logo">kenki.okada</a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">自己紹介</a></li>
-      <li><a href="#projects">つくったもの</a></li>
-      <li><a href="#skills">技術</a></li>
-      <li><a href="#timeline">経歴</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="theme-toggle" aria-label="テーマ切替">☀️</button>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <!-- Bento Grid -->
+  <main class="dashboard">
 
-  <!-- HERO -->
-  <main>
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-role">業務推進DX担当 @ ReSowホールディングス</div>
-      <h1>
+    <!-- HERO: 大タイル -->
+    <section class="tile tile-hero" id="tile-hero">
+      <div class="tile-eyebrow">業務推進DX担当 @ ReSowホールディングス</div>
+      <h1 class="hero-name">
         <span class="name-jp">岡田 賢揮</span>
         <span class="name-en">Kenki Okada</span>
       </h1>
       <p class="hero-intro">
-        就労継続支援B型事業所<span class="ib">「ワンダーフレンズ」を運営する</span>会社で、<span class="ib"><strong>一人情シス兼DX担当</strong></span>をやっています。<span class="ib">エンジニアとしての</span>専門教育は受けていません。<span class="ib">「これ、自動化できないかな」</span>から始まって、気づいたら<span class="ib">Bot・AI・クラウドまで</span>手を広げていました。
+        就労継続支援B型事業所「ワンダーフレンズ」を運営する会社で、<strong>一人情シス兼DX担当</strong>をやっています。
+        「これ、自動化できないかな」から始まって、気づいたらBot・AI・クラウドまで手を広げていました。
       </p>
-      <div class="hero-links">
-        <a href="#projects" class="primary">つくったもの →</a>
-        <a href="https://github.com/okadak-maker" target="_blank" rel="noopener">GitHub</a>
+      <div class="hero-cursor">_</div>
+    </section>
+
+    <!-- STATUS: ライブステータス -->
+    <section class="tile tile-status" id="tile-status">
+      <div class="tile-eyebrow">LIVE STATUS</div>
+      <div class="status-list">
+        <div class="status-item">
+          <span class="status-dot active"></span>
+          <span class="status-name">ReSow Portal</span>
+        </div>
+        <div class="status-item">
+          <span class="status-dot active"></span>
+          <span class="status-name">Ghost Memory</span>
+          <span class="status-meta">198 memories</span>
+        </div>
+        <div class="status-item">
+          <span class="status-dot active"></span>
+          <span class="status-name">KarasuBot</span>
+          <span class="status-meta">24h稼働</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section-border">
-    <div class="wrap">
-      <p class="label-sm reveal">// about</p>
-      <h2 class="reveal">自己紹介</h2>
+    <!-- GITHUB -->
+    <a class="tile tile-github" href="https://github.com/okadak-maker" target="_blank" rel="noopener" id="tile-github">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span class="github-label">GitHub</span>
+      <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
 
-      <p class="about-text reveal">
-        福祉の現場って、まだまだ紙とExcelが多いんです。<span class="ib">「この作業、毎週やってるけど</span><span class="ib">自動化できないかな」</span>という素朴な疑問から、LINE WORKS Bot、社内ポータル、AIチャットボットと、必要なものを片っ端から作ってきました。</p>
-      <p class="about-text reveal">
-        特別な技術力があるわけじゃないです。ただ、<span class="ib"><em>現場の人が本当に困っていること</em>を</span>聞いて、それを解決するために必要な技術を覚えて、動くものを作る。その繰り返しです。</p>
-      <p class="about-text reveal">
-        最近はAIエージェントの活用にハマっていて、LLMに長期記憶を持たせるシステムを自作したり、AIコーディング環境を徹底的にカスタマイズしたりしています。</p>
-
-      <dl class="about-meta reveal">
-        <div>
-          <dt>ORGANIZATION</dt>
-          <dd>ReSowホールディングス</dd>
-        </div>
-        <div>
-          <dt>ROLE</dt>
-          <dd>業務推進DX担当</dd>
-        </div>
-        <div>
-          <dt>DOMAIN</dt>
-          <dd>就労継続支援B型</dd>
-        </div>
-        <div>
-          <dt>LOCATION</dt>
-          <dd>日本</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section-border">
-    <div class="wrap">
-      <p class="label-sm reveal">// projects</p>
-      <h2 class="reveal">つくったもの</h2>
-      <p class="section-lead reveal">すべて実際に社内で使っているシステムです。設計から開発、運用まで一人でやっています。</p>
-
-      <div class="projects-list stagger">
-
-        <!-- Ghost Memory -->
-        <div class="project project-featured reveal" style="--i:0">
-          <img src="img/ghost-memory.png?v=2" alt="Ghost Memory Engine の画面" class="project-screenshot" loading="lazy">
-          <div class="project-top">
-            <h3>Ghost Memory Engine</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「AIに記憶を持たせたかった」</p>
-          <p class="project-body">
-            AIアシスタントと毎日やりとりしているうちに、「昨日話したこと覚えてないのか…」と思うことが増えた。だったら自分で記憶システムを作ろうと、脳科学の論文を読み漁って、情動・忘却曲線・連想ネットワークをコードに落とし込んだ。今ではMCPサーバーとして複数のAI環境に組み込んで使っている。</p>
-          <ul class="project-detail">
-            <li>ベクトル検索 + 情動・鮮度・連想によるランキング</li>
-            <li>夢生成（バロウズ式カットアップ）で記憶を再構成</li>
-            <li>300件以上の記憶を蓄積、日常的に稼働中</li>
-          </ul>
-          <div class="project-tech">
-            <span>Python</span><span>SQLite</span><span>sentence-transformers</span><span>FastMCP</span>
-          </div>
-        </div>
-
-        <!-- ReSow Portal -->
-        <div class="project reveal" style="--i:1">
-          <img src="img/resow-portal.png?v=2" alt="ReSow Portal の画面" class="project-screenshot" loading="lazy">
-          <div class="project-top">
-            <h3>ReSow Portal + AIチャットボット</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「社内の情報、どこにあるかわからない」を解決したかった</p>
-          <p class="project-body">
-            4法人あるグループ会社の情報がバラバラで、誰に聞けばいいかわからない状態だった。Google Sheetsをデータソースにしたポータルサイトを作り、<span class="ib">AIチャットボット「くまくま🐻」</span>を搭載。社内FAQに自然言語で回答できるようにした。</p>
-          <ul class="project-detail">
-            <li>React 19 + Flask + Vertex AI (Gemini 2.5 Flash) による RAG</li>
-            <li>BM25 + Janome形態素解析でハイブリッド検索</li>
-            <li>Cloud Run にデプロイ、本番運用中</li>
-          </ul>
-          <div class="project-tech">
-            <span>React 19</span><span>Flask</span><span>Vertex AI</span><span>Cloud Run</span><span>Docker</span><span>GAS</span>
-          </div>
-        </div>
-
-        <!-- KarasuBot -->
-        <div class="project reveal" style="--i:2">
-          <img src="img/karasubot.png" alt="KarasuBot のDiscord画面" class="project-screenshot" loading="lazy">
-          <div class="project-top">
-            <h3>KarasuBot</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「外出中でもAIにコードを書かせたい」</p>
-          <p class="project-body">
-            AIコーディングアシスタント（Antigravity）をスマホから遠隔操作したかった。DiscordのBotとしてChrome DevTools Protocolでブラウザを制御し、スクショ取得・自動承認・Git操作など26の機能を実装。VSCode拡張の双方向ブリッジも自作した。</p>
-          <ul class="project-detail">
-            <li>26機能（スクショ、モード切替、自動承認、定期実行、Git操作等）</li>
-            <li>Chrome DevTools Protocol で実ブラウザを制御</li>
-            <li>常駐プロセスとして24時間稼働</li>
-          </ul>
-          <div class="project-tech">
-            <span>TypeScript</span><span>discord.js v14</span><span>CDP</span><span>WebSocket</span><span>better-sqlite3</span>
-          </div>
-        </div>
-
-        <!-- LINE WORKS Bot -->
-        <div class="project reveal" style="--i:3">
-          <div class="project-top">
-            <h3>LINE WORKS Bot 基盤</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「Cronジョブの結果、誰も見てないよね」</p>
-          <p class="project-body">
-            バッチ処理の結果がログに埋もれて誰も見ない問題を、LINE WORKSに自動転送することで解決。Windows Updateのパッチ情報をMSRC APIから取得して毎月自動通知する仕組みも組み込んだ。
-          </p>
-          <ul class="project-detail">
-            <li>Cron → LINE WORKS 転送ブリッジ</li>
-            <li>MSRC API連携でWUパッチ管理を自動化</li>
-            <li>JWT認証、マルチBot構成</li>
-          </ul>
-          <div class="project-tech">
-            <span>Python</span><span>FastAPI</span><span>LINE WORKS API</span><span>Docker</span><span>Cloud Run</span>
-          </div>
-        </div>
-
-        <!-- DX Workspace -->
-        <div class="project reveal" style="--i:4">
-          <div class="project-top">
-            <h3>社内DX統合ワークスペース</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「SaaS導入したけど、アカウント管理がカオス」</p>
-          <p class="project-body">
-            SANSAN×Google Workspace のアカウント突合を自動化。DX研修スライドの自動生成、ブランドアセット管理、PDF→Markdown変換など、社内DX推進に必要な小さなツール群を一箇所に集約している。
-          </p>
-          <ul class="project-detail">
-            <li>SANSAN API × Google Admin SDK で自動突合</li>
-            <li>Marp / python-pptx で研修資料を量産</li>
-            <li>社内のDX推進活動のハブとして機能</li>
-          </ul>
-          <div class="project-tech">
-            <span>Python</span><span>SANSAN API</span><span>Google Admin SDK</span><span>Marp</span>
-          </div>
-        </div>
-
-        <!-- Interest Radar -->
-        <div class="project reveal" style="--i:5">
-          <div class="project-top">
-            <h3>Interest Radar</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「技術トレンド、追いきれない」</p>
-          <p class="project-body">
-            X（Twitter）とGitHubのトレンドを自動収集して、自分のプロジェクトとキーワード照合。関連度の高い情報だけフィルタしてMarkdownダイジェストを生成し、LINE WORKSに通知。
-          </p>
-          <div class="project-tech">
-            <span>Python</span><span>Twitter CLI</span><span>GitHub API</span><span>LINE WORKS</span>
-          </div>
-        </div>
-
-        <!-- Antigravity Skills -->
-        <div class="project reveal" style="--i:6">
-          <div class="project-top">
-            <h3>Antigravity カスタムスキル群</h3>
-            <span class="project-status">運用中</span>
-          </div>
-          <p class="project-why">「AIの使い方そのものを最適化したい」</p>
-          <p class="project-body">
-            AIコーディング環境に20以上のカスタムスキルを自作。コードレビュー自動化、テスト駆動開発、デザインQA、構造化思考テンプレート、セカンドオピニオンプロトコルなど。AIとの協働の仕方そのものを設計している。
-          </p>
-          <div class="project-tech">
-            <span>Markdown</span><span>Python</span><span>Shell</span><span>MCP</span>
-          </div>
-        </div>
-
+    <!-- GHOST MEMORY PROJECT -->
+    <section class="tile tile-project tile-ghost" data-modal="ghost" id="tile-ghost">
+      <img src="img/ghost-memory.png?v=2" alt="Ghost Memory Engine の画面" class="tile-screenshot" loading="lazy">
+      <div class="tile-project-info">
+        <h3>Ghost Memory Engine</h3>
+        <span class="badge-status">運用中</span>
       </div>
-    </div>
-  </section>
+      <p class="tile-desc">AIに記憶を持たせたかった。脳科学の論文を読み漁って、情動・忘却曲線・連想ネットワークをコードに落とし込んだ。</p>
+      <div class="tile-tags">
+        <span>Python</span><span>SQLite</span><span>MCP</span>
+      </div>
+    </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section-border">
-    <div class="wrap">
-      <p class="label-sm reveal">// tech stack</p>
-      <h2 class="reveal">使っている技術</h2>
+    <!-- RESOW PORTAL PROJECT -->
+    <section class="tile tile-project tile-portal" data-modal="portal" id="tile-portal">
+      <img src="img/resow-portal.png?v=2" alt="ReSow Portal の画面" class="tile-screenshot" loading="lazy">
+      <div class="tile-project-info">
+        <h3>ReSow Portal</h3>
+        <span class="badge-status">運用中</span>
+      </div>
+      <p class="tile-desc">4法人の情報がバラバラだった。Google Sheetsをデータソースにしたポータルサイトを作り、AIチャットボット「くまくま🐻」を搭載。</p>
+      <div class="tile-tags">
+        <span>React 19</span><span>Flask</span><span>Vertex AI</span><span>Cloud Run</span>
+      </div>
+    </section>
 
-      <div class="skills-layout stagger">
-        <div class="skill-group reveal" style="--i:0">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Languages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">GAS</span>
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">Shell</span>
+    <!-- SKILLS -->
+    <section class="tile tile-skills" id="tile-skills">
+      <div class="tile-eyebrow">SKILLS</div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span class="skill-label">言語</span>
+          <div class="skill-items"><span>Python</span><span>JS/TS</span><span>GAS</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="skill-label">Frontend</span>
+          <div class="skill-items"><span>React</span><span>Vite</span><span>Mantine</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2M22 12L18 8M22 12l-4 4M2 12l4-4M2 12l4 4"/></svg>
+          </div>
+          <span class="skill-label">Backend</span>
+          <div class="skill-items"><span>Flask</span><span>Node.js</span><span>REST</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          </div>
+          <span class="skill-label">Cloud</span>
+          <div class="skill-items"><span>GCP</span><span>Cloud Run</span><span>Docker</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="skill-label">AI / Bot</span>
+          <div class="skill-items"><span>Vertex AI</span><span>MCP</span><span>Discord.js</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <span class="skill-label">業務自動化</span>
+          <div class="skill-items"><span>GAS</span><span>Webhook</span><span>CRON</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KARASUBOT PROJECT -->
+    <section class="tile tile-project tile-karasu" data-modal="karasu" id="tile-karasu">
+      <img src="img/karasubot.png" alt="KarasuBot のDiscord画面" class="tile-screenshot" loading="lazy">
+      <div class="tile-project-info">
+        <h3>KarasuBot</h3>
+        <span class="badge-status">運用中</span>
+      </div>
+      <p class="tile-desc">Antigravityをスマホから遠隔操作するDiscord Bot。26のスラッシュコマンドで画面キャプチャ・モデル切替・プロンプトキュー管理。</p>
+      <div class="tile-tags">
+        <span>TypeScript</span><span>Discord.js</span><span>CDP</span>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="tile tile-timeline" id="tile-timeline">
+      <div class="tile-eyebrow">CAREER</div>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <span class="timeline-year">2025–</span>
+          <div>
+            <div class="timeline-title">ReSowホールディングス</div>
+            <div class="timeline-role">業務推進DX担当</div>
           </div>
         </div>
-
-        <div class="skill-group reveal" style="--i:1">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>Cloud & Infra</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Cloud Run</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Vertex AI</span>
-            <span class="skill-tag">Cloud Build</span>
-            <span class="skill-tag">GCP IAM</span>
+        <div class="timeline-item">
+          <span class="timeline-year">2022</span>
+          <div>
+            <div class="timeline-title">ワンダーフレンズ</div>
+            <div class="timeline-role">支援員 → 管理者 → DX兼務</div>
           </div>
         </div>
-
-        <div class="skill-group reveal" style="--i:2">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.57-3.25 3.92L12 10v2"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.57 3.25 3.92"/><path d="M9 22h6"/><path d="M10 18h4v4h-4z"/><circle cx="12" cy="14" r="2"/></svg>AI / LLM</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Antigravity</span>
-            <span class="skill-tag">OpenClaw</span>
-            <span class="skill-tag">Ghost Memory</span>
-            <span class="skill-tag">RAG</span>
-            <span class="skill-tag">MCP</span>
-            <span class="skill-tag">sentence-transformers</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal" style="--i:3">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>API</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">LINE WORKS</span>
-            <span class="skill-tag">X (Twitter)</span>
-            <span class="skill-tag">Google Workspace</span>
-            <span class="skill-tag">SANSAN</span>
-            <span class="skill-tag">Discord</span>
-            <span class="skill-tag">MSRC</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal" style="--i:4">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Frontend</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">React 19</span>
-            <span class="skill-tag">Vite</span>
-            <span class="skill-tag">Tailwind v4</span>
-            <span class="skill-tag">Mantine</span>
-            <span class="skill-tag">TanStack Query</span>
-          </div>
-        </div>
-
-        <div class="skill-group reveal" style="--i:5">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">clasp</span>
-            <span class="skill-tag">Marp</span>
-            <span class="skill-tag">CDP</span>
-            <span class="skill-tag">JWT / OAuth2</span>
+        <div class="timeline-item">
+          <span class="timeline-year">–2021</span>
+          <div>
+            <div class="timeline-title">異業種からの転身</div>
+            <div class="timeline-role">プログラミングは独学で習得</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TIMELINE -->
-  <section id="timeline" class="section-border">
-    <div class="wrap">
-      <p class="label-sm reveal">// journey</p>
-      <h2 class="reveal" style="margin-bottom: var(--sp-10);">これまで</h2>
-
-      <div class="timeline stagger">
-        <div class="timeline-item reveal" style="--i:0">
-          <div class="timeline-year">2025</div>
-          <div class="timeline-content">
-            <h3>LINE WORKS Bot・GAS自動化を始める</h3>
-            <p>「この通知、毎回手動でやるの？」から始まった。LINE WORKS APIとGASで社内の定型作業を片っ端から自動化。</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal" style="--i:1">
-          <div class="timeline-year">2025–26</div>
-          <div class="timeline-content">
-            <h3>Cloud Run + Docker でインフラ構築</h3>
-            <p>BotをローカルPCで動かすのに限界を感じ、GCPでコンテナデプロイの基盤を構築。CI/CDも整備。</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal" style="--i:2">
-          <div class="timeline-year">2026</div>
-          <div class="timeline-content">
-            <h3>社内ポータル + AIチャットボット</h3>
-            <p>React 19 + Vertex AI RAGで社内ポータルを構築。AIが社内FAQに答えてくれるようになった。</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal" style="--i:3">
-          <div class="timeline-year">2026</div>
-          <div class="timeline-content">
-            <h3>Ghost Memory Engine を自作</h3>
-            <p>AIに長期記憶を持たせたくて、脳科学ベースの記憶システムを独自開発。MCPサーバーとして日常的に使っている。</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal" style="--i:4">
-          <div class="timeline-year">Now</div>
-          <div class="timeline-content">
-            <h3>AI開発環境の極限カスタマイズ</h3>
-            <p>KarasuBot、Antigravityスキル、OpenClaw連携。人間とAIの協働の仕方そのものを設計している。</p>
-          </div>
-        </div>
+    <!-- CONTACT -->
+    <section class="tile tile-contact" id="tile-contact">
+      <div class="tile-eyebrow">CONTACT</div>
+      <div class="contact-links">
+        <a href="https://github.com/okadak-maker" target="_blank" rel="noopener" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://x.com/kenki_okada" target="_blank" rel="noopener" class="contact-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section-border">
-    <div class="wrap">
-      <p class="label-sm reveal">// contact</p>
-      <h2 class="reveal">連絡先</h2>
-
-      <div class="contact-body reveal">
-        <p>プロジェクトの詳細や、DX推進についての相談など<span class="ib">お気軽にどうぞ。</span></p>
-
-        <div class="contact-links" style="margin-top: 16px;">
-          <a href="https://github.com/okadak-maker" class="contact-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a href="mailto:okada.k@resow.co.jp" class="contact-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            Email
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   </main>
-  <footer class="footer">
-    <div class="wrap">
-      <p>© 2026 Kenki Okada</p>
+
+  <!-- Modals -->
+  <dialog class="modal" id="modal-ghost">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+      <img src="img/ghost-memory.png?v=2" alt="Ghost Memory Engine" class="modal-screenshot">
+      <h2>Ghost Memory Engine</h2>
+      <blockquote>「AIに記憶を持たせたかった」</blockquote>
+      <p>AIアシスタントと毎日やりとりしているうちに、「昨日話したこと覚えてないのか…」と思うことが増えた。だったら自分で記憶システムを作ろうと、脳科学の論文を読み漁って、情動・忘却曲線・連想ネットワークをコードに落とし込んだ。今ではMCPサーバーとして複数のAI環境に組み込んで使っている。</p>
+      <ul>
+        <li>ベクトル検索 + 情動・鮮度・連想によるランキング</li>
+        <li>夢生成（バロウズ式カットアップ）で記憶を再構成</li>
+        <li>忘却曲線による自然な記憶の減衰と想起</li>
+        <li>198件の記憶、9,264の連想リンク</li>
+      </ul>
+      <div class="modal-tags">
+        <span>Python</span><span>SQLite</span><span>MCP</span><span>FTS5</span><span>脳科学</span>
+      </div>
     </div>
-  </footer>
+  </dialog>
+
+  <dialog class="modal" id="modal-portal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+      <img src="img/resow-portal.png?v=2" alt="ReSow Portal" class="modal-screenshot">
+      <h2>ReSow Portal + AIチャットボット</h2>
+      <blockquote>「社内の情報、どこにあるかわからない」を解決したかった</blockquote>
+      <p>4法人あるグループ会社の情報がバラバラで、誰に聞けばいいかわからない状態だった。Google Sheetsをデータソースにしたポータルサイトを作り、AIチャットボット「くまくま🐻」を搭載。社内FAQに自然言語で回答できるようにした。</p>
+      <ul>
+        <li>React 19 + Flask + Vertex AI (Gemini 2.5 Flash) による RAG</li>
+        <li>BM25 + Janome形態素解析でハイブリッド検索</li>
+        <li>Cloud Run にデプロイ、本番運用中</li>
+        <li>9言語対応（Google Translate）</li>
+      </ul>
+      <div class="modal-tags">
+        <span>React 19</span><span>Flask</span><span>Vertex AI</span><span>Cloud Run</span><span>Docker</span><span>GAS</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-karasu">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+      <img src="img/karasubot.png" alt="KarasuBot" class="modal-screenshot">
+      <h2>KarasuBot</h2>
+      <blockquote>「外出先からAIを操作したかった」</blockquote>
+      <p>Antigravity AI コーディングアシスタントをDiscord経由で操作するBot。CDP (Chrome DevTools Protocol) でブラウザを制御し、スマホからプロンプト送信・画面確認・各種操作が可能。</p>
+      <ul>
+        <li>26のスラッシュコマンド（screenshot, mode, models, queue等）</li>
+        <li>自動承認・ループ検知・レートリミット等のセーフティ機能</li>
+        <li>LINE WORKS 双方向ブリッジ</li>
+        <li>REST API Gateway で外部からプロンプト投入可能</li>
+      </ul>
+      <div class="modal-tags">
+        <span>TypeScript</span><span>Discord.js</span><span>CDP</span><span>Node.js</span>
+      </div>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
