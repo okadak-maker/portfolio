@@ -321,17 +321,25 @@ body {
   grid-column: 2 / 4;
   grid-row: 3;
 }
+.tile-openclaw {
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+.tile-gas {
+  grid-column: 3;
+  grid-row: 4;
+}
 .tile-karasu {
   grid-column: 1;
-  grid-row: 4;
+  grid-row: 5;
 }
 .tile-contact {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 5;
 }
 .tile-philosophy {
   grid-column: 3;
-  grid-row: 4;
+  grid-row: 5;
 }
 
 /* ═══════════════════════════════════════════
@@ -339,7 +347,13 @@ body {
    ═══════════════════════════════════════════ */
 .tile-skills {
   grid-column: 4;
-  grid-row: 2 / 5;
+  grid-row: 2 / 6;
+}
+
+/* Badge variant for hobby projects */
+.badge-hobby {
+  background: var(--color-text-muted);
+  opacity: 0.7;
 }
 .skills-grid {
   display: flex;
@@ -555,9 +569,11 @@ body {
   .tile-github { grid-column: 2; grid-row: auto; }
   .tile-ghost { grid-column: 1; grid-row: auto; }
   .tile-portal { grid-column: 2; grid-row: auto; }
+  .tile-openclaw { grid-column: 1 / 3; grid-row: auto; }
+  .tile-gas { grid-column: 1; grid-row: auto; }
   .tile-skills { grid-column: 1 / 3; grid-row: auto; }
-  .tile-karasu { grid-column: 1; grid-row: auto; }
-  .tile-contact { grid-column: 2; grid-row: auto; }
+  .tile-karasu { grid-column: 2; grid-row: auto; }
+  .tile-contact { grid-column: 1; grid-row: auto; }
   .tile-philosophy { grid-column: 1 / 3; grid-row: auto; }
 
   .skills-grid {
@@ -577,10 +593,12 @@ body {
   .tile-github,
   .tile-ghost,
   .tile-portal,
+  .tile-openclaw,
+  .tile-gas,
   .tile-skills,
   .tile-karasu,
   .tile-contact,
-  .tile-timeline {
+  .tile-philosophy {
     grid-column: 1;
     grid-row: auto;
   }

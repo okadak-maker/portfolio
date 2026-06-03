@@ -145,21 +145,44 @@
       </div>
     </section>
 
+    <!-- OPENCLAW PROJECT -->
+    <section class="tile tile-project tile-openclaw" data-modal="openclaw" id="tile-openclaw">
+      <img src="img/openclaw.png" alt="OpenClaw マルチエージェント" class="tile-screenshot" loading="lazy">
+      <div class="tile-project-info">
+        <h3>OpenClaw マルチエージェント</h3>
+        <span class="badge-status">運用中</span>
+      </div>
+      <p class="tile-desc">11体のAIエージェントと25本のCRONジョブで、日次レポート・週報・セキュリティ監査・Wiki同期・ヘルスチェックを完全自動化。</p>
+      <div class="tile-tags">
+        <span>Python</span><span>OpenClaw</span><span>CRON</span><span>MCP</span>
+      </div>
+    </section>
+
+    <!-- GAS AUTOMATION PROJECT -->
+    <section class="tile tile-project tile-gas" data-modal="gas" id="tile-gas">
+      <img src="img/gas-automation.png" alt="GAS 業務自動化" class="tile-screenshot" loading="lazy">
+      <div class="tile-project-info">
+        <h3>業務自動化 GAS</h3>
+        <span class="badge-status">運用中</span>
+      </div>
+      <p class="tile-desc">勤怠・経費・稟議をGoogle Sheetsベースで自動化。Webhook通知でリアルタイムに連携。</p>
+      <div class="tile-tags">
+        <span>GAS</span><span>Sheets API</span><span>Webhook</span>
+      </div>
+    </section>
+
     <!-- KARASUBOT PROJECT -->
     <section class="tile tile-project tile-karasu" data-modal="karasu" id="tile-karasu">
       <img src="img/karasubot.png" alt="KarasuBot のDiscord画面" class="tile-screenshot" loading="lazy">
       <div class="tile-project-info">
         <h3>KarasuBot</h3>
-        <span class="badge-status">運用中</span>
+        <span class="badge-status badge-hobby">趣味</span>
       </div>
-      <p class="tile-desc">Antigravityをスマホから遠隔操作するDiscord Bot。26のスラッシュコマンドで画面キャプチャ・モデル切替・プロンプトキュー管理。</p>
+      <p class="tile-desc">Antigravityをスマホから遠隔操作するDiscord Bot。26のスラッシュコマンドで画面キャプチャ・モデル切替。</p>
       <div class="tile-tags">
         <span>TypeScript</span><span>Discord.js</span><span>CDP</span>
       </div>
     </section>
-
-    <!-- TIMELINE -->
-
 
     <!-- CONTACT -->
     <section class="tile tile-contact" id="tile-contact">
@@ -227,6 +250,44 @@
       </ul>
       <div class="modal-tags">
         <span>React 19</span><span>Flask</span><span>Vertex AI</span><span>Cloud Run</span><span>Docker</span><span>GAS</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-openclaw">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+      <img src="img/openclaw.png" alt="OpenClaw" class="modal-screenshot">
+      <h2>OpenClaw マルチエージェントシステム</h2>
+      <blockquote>「自分の分身を11体作った」</blockquote>
+      <p>一人情シスの限界を感じ、業務を丸ごとAIエージェント群に委任するシステムを構築。モニタリング・DX推進・ドキュメント管理・セキュリティ・バックアップの各領域に専門エージェントを配置し、25本のCRONジョブで24時間自律運用している。</p>
+      <ul>
+        <li>11エージェント体制（monitor, dx, docmanager, sysadmin, airesearcher 等）</li>
+        <li>毎朝の秘書ブリーフィングで1日の予定と要対応事項を自動通知</li>
+        <li>週報・DXブログ・セキュリティ監査を完全自動生成</li>
+        <li>自律改善ループで設定やスキルを自己最適化</li>
+      </ul>
+      <div class="modal-tags">
+        <span>Python</span><span>OpenClaw</span><span>CRON</span><span>MCP</span><span>Vertex AI</span><span>GAS</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-gas">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+      <img src="img/gas-automation.png" alt="GAS 業務自動化" class="modal-screenshot">
+      <h2>業務自動化 GAS スクリプト群</h2>
+      <blockquote>「手作業で集計してる場合じゃない」</blockquote>
+      <p>Google Workspace を基盤とした業務自動化。勤怠管理・経費精算・稟議フローをGoogle Sheetsで一元管理し、トリガーとWebhookで通知・集計を自動化。非エンジニアでも触れるUIで現場に定着した。</p>
+      <ul>
+        <li>SpreadsheetApp + MailApp で定期レポート自動送信</li>
+        <li>LINE WORKS / Slack への Webhook 通知連携</li>
+        <li>フォーム → Sheets → PDF生成の稟議ワークフロー</li>
+        <li>clasp + Git でバージョン管理・チーム開発</li>
+      </ul>
+      <div class="modal-tags">
+        <span>GAS</span><span>Sheets API</span><span>Webhook</span><span>clasp</span><span>LINE WORKS</span>
       </div>
     </div>
   </dialog>
