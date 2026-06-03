@@ -171,16 +171,23 @@
       </div>
     </section>
 
-    <!-- KARASUBOT PROJECT -->
-    <section class="tile tile-project tile-karasu" data-modal="karasu" id="tile-karasu">
-      <img src="img/karasubot.png" alt="KarasuBot のDiscord画面" class="tile-screenshot" loading="lazy">
-      <div class="tile-project-info">
-        <h3>KarasuBot</h3>
-        <span class="badge-status badge-hobby">趣味</span>
-      </div>
-      <p class="tile-desc">Antigravityをスマホから遠隔操作するDiscord Bot。26のスラッシュコマンドで画面キャプチャ・モデル切替。</p>
+    <!-- KARASUBOT (compact, no image) -->
+    <section class="tile tile-compact tile-karasu" data-modal="karasu" id="tile-karasu">
+      <div class="tile-eyebrow">HOBBY</div>
+      <h3 class="compact-title">🐦‍⬛ KarasuBot</h3>
+      <p class="tile-desc">Discord経由でAntigravityを遠隔操作。26のスラッシュコマンド。</p>
       <div class="tile-tags">
-        <span>TypeScript</span><span>Discord.js</span><span>CDP</span>
+        <span>TypeScript</span><span>Discord.js</span>
+      </div>
+    </section>
+
+    <!-- LINE WORKS 連携 -->
+    <section class="tile tile-compact tile-lineworks" data-modal="lineworks" id="tile-lineworks">
+      <div class="tile-eyebrow">INTEGRATION</div>
+      <h3 class="compact-title">💬 LINE WORKS 連携</h3>
+      <p class="tile-desc">ポータル↔LINE WORKSの双方向同期。ノート投稿・通知を自動化。</p>
+      <div class="tile-tags">
+        <span>GAS</span><span>REST API</span><span>OAuth</span>
       </div>
     </section>
 
@@ -210,6 +217,29 @@
         <span>🔧 現場ドリブン</span>
         <span>🚀 とりあえず動かす</span>
         <span>🔄 改善し続ける</span>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="tile tile-numbers" id="tile-numbers">
+      <div class="tile-eyebrow">NUMBERS</div>
+      <div class="numbers-grid">
+        <div class="number-item">
+          <span class="number-value">11</span>
+          <span class="number-label">AIエージェント</span>
+        </div>
+        <div class="number-item">
+          <span class="number-value">25</span>
+          <span class="number-label">CRONジョブ</span>
+        </div>
+        <div class="number-item">
+          <span class="number-value">8+</span>
+          <span class="number-label">GASスクリプト</span>
+        </div>
+        <div class="number-item">
+          <span class="number-value">4</span>
+          <span class="number-label">法人の情報統合</span>
+        </div>
       </div>
     </section>
 
@@ -307,6 +337,24 @@
       </ul>
       <div class="modal-tags">
         <span>TypeScript</span><span>Discord.js</span><span>CDP</span><span>Node.js</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-lineworks">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+      <h2>💬 LINE WORKS 連携</h2>
+      <blockquote>社内ポータルとLINE WORKSをシームレスに接続</blockquote>
+      <p>ReSow Portalの更新情報をLINE WORKSのノートに自動投稿。OAuth 2.0認証でセキュアに連携し、双方向のデータ同期を実現。</p>
+      <ul>
+        <li>Portal → LINE WORKS ノート自動投稿</li>
+        <li>スケジュール同期（GAS トリガー）</li>
+        <li>管理者ダッシュボードで同期状態を監視</li>
+        <li>エラー時のSlack/Webhook通知</li>
+      </ul>
+      <div class="modal-tags">
+        <span>GAS</span><span>LINE WORKS API</span><span>OAuth 2.0</span><span>REST</span><span>Webhook</span>
       </div>
     </div>
   </dialog>
