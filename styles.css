@@ -347,7 +347,8 @@ body {
    ═══════════════════════════════════════════ */
 .tile-skills {
   grid-column: 4;
-  grid-row: 2 / 6;
+  grid-row: 2 / 4;
+  align-self: start;
 }
 
 /* Badge variant for hobby projects */
