@@ -320,11 +320,7 @@ body {
   grid-row: 4;
 }
 .tile-contact {
-  grid-column: 2;
-  grid-row: 4;
-}
-.tile-timeline {
-  grid-column: 3;
+  grid-column: 2 / 4;
   grid-row: 4;
 }
 
@@ -372,34 +368,7 @@ body {
   color: var(--color-text-muted);
 }
 
-/* ═══════════════════════════════════════════
-   TILE: Timeline
-   ═══════════════════════════════════════════ */
-/* timeline grid position set above in project section */
-.timeline-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.timeline-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.timeline-year {
-  font: 600 12px/1.4 var(--font-code);
-  color: var(--color-primary);
-  min-width: 50px;
-  flex-shrink: 0;
-}
-.timeline-title {
-  font: 600 14px/1.4 var(--font-ja);
-  color: var(--color-text);
-}
-.timeline-role {
-  font: 400 12px/1.4 var(--font-ja);
-  color: var(--color-text-muted);
-}
+
 
 /* ═══════════════════════════════════════════
    TILE: Contact
@@ -543,8 +512,7 @@ body {
   .tile-portal { grid-column: 2; grid-row: auto; }
   .tile-skills { grid-column: 1 / 3; grid-row: auto; }
   .tile-karasu { grid-column: 1; grid-row: auto; }
-  .tile-contact { grid-column: 2; grid-row: auto; }
-  .tile-timeline { grid-column: 1 / 3; grid-row: auto; }
+  .tile-contact { grid-column: 1 / 3; grid-row: auto; }
 
   .skills-grid {
     display: grid;
